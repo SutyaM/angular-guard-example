@@ -17,7 +17,7 @@ export class AuthenticationGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const allowedRoles = next.data.permission;
     if (this.userService.subject !== null) {
-      return allowedRoles.includes(this.userService.subject);
+      return allowedRoles.includes(this.userService.value);
     }
   }
   

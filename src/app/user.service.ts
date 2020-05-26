@@ -6,9 +6,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UserService {
 
-  subject: BehaviorSubject<string> = null;
 
-  constructor() {
+  subject: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+  input = this.subject.asObservable();
+  value: string;
 
-   }
+  constructor() { }
+
+  updateInput(value: string) {
+    this.subject.next(value);
+  }
 }

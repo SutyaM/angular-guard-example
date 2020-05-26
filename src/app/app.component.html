@@ -1,9 +1,9 @@
 <div>
   <router-outlet></router-outlet>
   <form>
-    <input type="radio" name="permission" value="user" [(ngModel)]="userService.subject">
+    <input type="radio" name="permission" value="user" (change)="onInput($event)">
     <label for="user">User</label><br>
-    <input type="radio" name="permission" value="admin" [(ngModel)]="userService.subject">
+    <input type="radio" name="permission" value="admin" (change)="onInput($event)">
     <label for="admin">Admin</label>
   </form>
 </div>
